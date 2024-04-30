@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    stack<int> pilita; //(LIFO)
+    pilita.empty(); //si la pila esta vacia
+    pilita.push(); //agrega un elemento a la pila
+    pilita.top(); // ve el ultimo elemento de la pila
+    pilita.pop(); // elimina el ultimo elemento colocado
+} 
