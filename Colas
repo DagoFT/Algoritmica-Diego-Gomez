@@ -1,0 +1,9 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+    queue<int> colita; //(FIFO)
+    colita.empty(); //si la pila esta vacia
+    colita.push(); //agrega un elemento a la pila
+    colita.front(); // ve el ultimo elemento  de la pila
+    colita.pop(); // elimina el ultimo elemento colocado
+} 

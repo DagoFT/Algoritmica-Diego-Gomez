@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define input freopen("in.txt","r",stdin)
+#define output freopen("out.txt","w",stdout)
+
+bool vis[10000];
+vector<int> grafo[10000];
+int niveles[10000];
+void bfs (int nodoInicial) {
+    queue<int> colita;
+    colita.push(nodoInicial);
+    niveles[nodoInicial] = 0;
+    while(!colita.empty()){ // La pilita no esta vacia ????
+        int nodoActual = colita.front(); // obtener el primer elemento de la pila
+
+        colita.pop();
+        if(!vis[nodoActual]) {
+            vis[nodoActual] = true; // Marco como visitado al nodo actual
+            // empezar a visitar a sus amigos 
+            for(int i = 0; i < grafo[nodoActual].size(); i++ ){
+                int amigo = grafo[nodoActual][i]; // vecino o amigo
+                if(!vis[amigo]) { // El amigo no ha sido visitado ?
+                    colita.push(amigo);
+                    niveles[amigo] = niveles[nodoActual] + 1;
+                } 
+            }   
+        }
+    }
+}
